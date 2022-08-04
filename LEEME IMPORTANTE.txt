@@ -1,0 +1,16 @@
+La Prueba - Sistema IMDb, fue realizada en conjunto por los alumnos:
+	Valentina Mellado
+	Hernan Solarte
+Curso 0002, FullStack Java Diurno
+
+Realizando las funciones de BackEnd por Valentina Mellado y las de FrontEnd por Hernan Solarte.
+
+En paralelo se realizó el trabajo de la prueba haciendo uso de repositorio Github alojado en los repositorios de
+Valentina, con el objetivo de hacer lo más realista el trabajo grupal que será lo encontrado en un ambiente laboral.
+
+Puede ver los insights del trabajo realizado en https://github.com/ValentinaMelladoArenas/SistemaIMDb 
+
+
+Muchas gracias. 
+
+

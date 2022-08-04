@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/general.html :: header">
+
+<!--/*/ <th:block th:include="fragments/general.html :: headerfiles">
+        </th:block> /*/-->
+
+<title>Añadir Show</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+	<nav th:insert="fragments/general.html :: nav"></nav>
+
+
+	<div class="row container mx-auto d-flex justify-content-center">
+
+
+			<section
+				class=" mt-5 py-4 bg-info bg-light col-12 col-md-8 col-xl-4 border border-success rounded"><h1 class="text-center">Añadir Show</h1>
+				<form th:action="@{/show/saveShow}" method="post"
+					th:object="${show}">
+
+					<!-- Correo -->
+					<div class="form-group py-2">
+						<label>Show Title</label> <input type="text" th:field="*{showTitle}"
+							class="form-control" id="showTitle" aria-describedby="claveHelp"
+							placeholder="Ingresar el título del show" required>
+					</div>
+					<!-- Show Network -->
+					<div class="form-group py-2">
+						<label>Show Network</label> <input type="text" th:field="*{showNetwork}"
+							class="form-control" id="ShowNetwork" aria-describedby="claveHelp"
+							placeholder="Ingresar la plataforma dónde ver el show" required>
+					</div>
+
+					<button type="submit" class="btn btn-primary">Añadir</button>
+				</form>
+			</section>
+		</div>
+
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/loginBase.html :: header">
+
+<!--/*/ <th:block th:include="fragments/general.html :: headerfiles">
+        </th:block> /*/-->
+
+<title>Iniciar Sesión</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+	<nav th:insert="fragments/loginBase.html :: nav"></nav>
+
+
+<div class="row container mx-auto d-flex justify-content-center">
+
+
+			<section
+				class=" mt-5 py-4 bg-info bg-light col-12 col-md-8 col-xl-4 border border-success rounded"><h1 class="text-center">Register</h1>
+				<form th:action="@{/usuario/new/saveUsuario}" method="post" 	th:object="${usuario}" 
+				oninput='passwordConfirmacion.setCustomValidity(password.value != passwordConfirmacion.value ? "Passwords do not match." : "")'>
+
+
+					<!-- Usuario -->
+					<div class="form-group py-2">
+						<label>Username</label> <input type="text" th:field="*{userName}"
+							class="form-control" id="userName" aria-describedby="claveHelp"
+							placeholder="Ingresa tu usuario" required>
+					</div>
+					<!-- Correo -->
+					<div class="form-group py-2">
+						<label>Correo</label> <input type="email" th:field="*{email}"
+							class="form-control" id="email" aria-describedby="claveHelp"
+							placeholder="Ingresa tu usuario" required>
+					</div>
+					<!-- Role -->
+					<div class="form-group py-2">
+						<label>Role</label> <select class="form-select" aria-label="Default select example" th:field="*{role}">
+							<option th:each="r : ${roles}"
+								th:value="${r.name}" th:text="${r.name}"></option>
+						</select>
+					</div>
+					<!-- Password -->
+					<div class="form-group py-2">
+						<label>Password</label> <input type="password" th:field="*{password}"
+							class="form-control" id="password" aria-describedby="claveHelp" name="password"
+							placeholder="Ingresa tu contraseña" required>
+					</div>
+					<!-- Confirmacion -->
+					<div class="form-group py-2">
+						<label>Password Confirmation</label> <input type="password"
+							th:field="*{passwordConfirmation}" class="form-control" name="passwordConfirmacion"
+							id="passwordConfirmacion" aria-describedby="claveHelp"
+							placeholder="Ingresa tu confirmación de contraseña" required>
+					</div>
+
+					<button onsubmit="event.preventDefault();" class="btn btn-primary">Registrar</button>
+				</form>
+			</section>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>
